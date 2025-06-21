@@ -2,8 +2,6 @@
  * The Main class contains a quickSort method that implements the quicksort algorithm to sort an array
  * of integers in Java.
  */
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
 import java.util.*;
 class Main {
     public static void quickSort(int low,int high,int []arr){
