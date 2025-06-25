@@ -1,0 +1,107 @@
+The best sorting algorithm to use depends on what you're sorting and your requirements. Here's a quick guide to help you choose:
+
+✅ If you want general-purpose fast sorting:
+   Use: Timsort (Python's built-in sort()), or Merge Sort / Quick Sort
+   Why: Good average performance for most real-world data
+
+
+🔍 If you care about stability (preserving equal elements’ order):
+   Use: Merge Sort or Timsort
+   Avoid: Quick Sort (unstable unless specially implemented)
+
+
+
+💾 If memory is tight (in-place sorting):
+   Use: Quick Sort or Heap Sort
+   Avoid: Merge Sort (uses O(n) extra space unless optimized)
+
+
+⚡ If you need blazing fast sorting for integers in a small range:
+   Use: Counting Sort or Radix Sort
+   Why: Linear time complexity, great for fixed-range keys
+
+
+
+📈 If you’re sorting nearly sorted data:
+   Use: Insertion Sort or Timsort
+   Why: Performs very well with low "disorder"
+
+                              📊 Time Complexity Comparison
+
+Algorithm	            Best	       Average	            Worst	      Space	      Stable
+Quick Sort	          O(n log n)      O(n log n)	        O(n²)	     O(log n)	   ❌ No
+Merge Sort	          O(n log n)	  O(n log n)	      O(n log n)	   O(n)	       ✅ Yes
+Heap Sort	          O(n log n)	  O(n log n)	      O(n log n)	   O(1)	       ❌ No
+Insertion Sort	        O(n)	        O(n²)	             O(n²)	       O(1)  	   ✅ Yes
+Counting Sort	      O(n + k)	       O(n + k)             O(n + k)	   O(k)	       ✅ Yes
+Radix Sort	            O(nk)	        O(nk)	             O(nk)	      O(n + k)	   ✅ Yes
+Timsort	                O(n)	      O(n log n)	       O(n log n)	    O(n)	   ✅ Yes
+
+
+
+
+
+Stable Quick Sort
+import java.util.*;
+
+public class StableQuickSort {
+
+    // Main stable quick sort function
+    public static List<Pair> stableQuickSort(List<Pair> arr) {
+        if (arr.size() <= 1) {
+            return arr;
+        }
+
+        Pair pivot = arr.get(0);
+        List<Pair> less = new ArrayList<>();
+        List<Pair> equal = new ArrayList<>();
+        List<Pair> greater = new ArrayList<>();
+
+        for (Pair p : arr) {
+            if (p.value < pivot.value) {
+                less.add(p);
+            } else if (p.value > pivot.value) {
+                greater.add(p);
+            } else {
+                equal.add(p);  // This keeps original order
+            }
+        }
+
+        List<Pair> sorted = new ArrayList<>();
+        sorted.addAll(stableQuickSort(less));
+        sorted.addAll(equal);
+        sorted.addAll(stableQuickSort(greater));
+        return sorted;
+    }
+
+    // Pair class with a label and value
+    static class Pair {
+        String label;
+        int value;
+
+        Pair(String label, int value) {
+            this.label = label;
+            this.value = value;
+        }
+
+        public String toString() {
+            return "(" + label + ", " + value + ")";
+        }
+    }
+
+    // Demo
+    public static void main(String[] args) {
+        List<Pair> input = Arrays.asList(
+            new Pair("A", 5),
+            new Pair("B", 3),
+            new Pair("C", 5),
+            new Pair("D", 2),
+            new Pair("E", 5)
+        );
+
+        List<Pair> sorted = stableQuickSort(input);
+        for (Pair p : sorted) {
+            System.out.print(p + " ");
+        }
+    }
+}
