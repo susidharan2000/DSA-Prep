@@ -1,0 +1,79 @@
+Temporal and Spatial Locality
+
+1. Temporal Locality
+   Definition: If a memory location is accessed, it is likely to be accessed again soon.
+   Why it matters: Cache keeps recently accessed data because it might be reused shortly, reducing future access time.
+ Example:
+ int x = arr[5];
+ int y = arr[5]; // Accessing the same memory soon after
+
+
+
+
+2. Spatial Locality
+   Definition: If a memory location is accessed, nearby memory locations are likely to be accessed soon after.
+   Why it matters: Cache loads blocks of contiguous memory (cache lines), so accessing one element brings neighbors into cache, speeding up sequential access.
+ Example:
+ for (int i = 0; i < arr.length; i++) {
+    sum += arr[i]; // Accessing array elements in order
+ }
+
+Summary Table:
+ Locality Type	What is accessed again?	Cache Benefit
+ Temporal Locality	The same memory locations	Keeps recently used data in cache
+ Spatial Locality	Nearby memory locations	Loads blocks of nearby data (cache lines)
+
+
+What Does Cache Store?
+
+1. Cache stores actual data:
+   - Frequently accessed data values from RAM.
+   - Helps avoid slow memory access by keeping recent data close to the CPU.
+
+2. Cache also stores memory addresses (tags):
+   - Each data block in the cache is linked to a memory address.
+   - Allows the cache to know if it has the data the CPU is asking for.
+
+3. Cache metadata:
+   - Valid bit: tells if the data in that cache line is usable.
+   - Dirty bit: shows if the data was changed in cache but not yet updated in RAM.
+
+Why both data and address?
+- When the CPU requests a memory address, the cache checks if it has that address (tag).
+- If yes (cache hit): return the data immediately.
+- If no (cache miss): load data from RAM into the cache.
+
+Summary:
+- Cache stores:
+  • Frequently accessed data
+  • The memory addresses (tags) of that data
+  • Metadata (valid/dirty bits)
+- This combination allows the CPU to quickly access data and improves performance.
+
+
+Cache vs Locality: What’s the difference?
+Aspect               | Cache                                                         | Locality
+-------------------- | ------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------
+What is it?          | A small, fast memory inside CPU                               | A pattern or behavior of how programs access memory
+Purpose              | To store data temporarily so CPU can access it faster         | Explains why programs access some data more often or nearby
+Who controls it?     | Hardware (CPU manages cache automatically)                    | The way your program accesses data (code behavior)
+Example              | CPU stores recent data so it doesn’t have to go to slower RAM | Your code uses the same variable repeatedly (temporal) or loops through arrays sequentially (spatial)
+Relation             | Cache exploits locality to speed up memory access             | Locality helps cache know what to store
+
+
+
+Summary: Cache (Hardware) and Locality(program that makes cache efficient)
+
+Cache (hardware):
+- A small, super-fast memory located very close to the CPU.
+- Acts like a mini storage to keep data and instructions that the CPU will likely need soon.
+- Speeds up program execution by avoiding slow memory (RAM) accesses.
+
+Locality:
+- A pattern or behavior in how a program accesses memory.
+- Includes temporal locality (reusing the same data soon) and spatial locality (accessing nearby data).
+- Helps the cache predict which data to store for quick access.
+
+Relation:
+- Without locality, cache cannot work efficiently because the CPU would have no predictable data to keep ready.
+- Locality guides the cache on what data to store.
