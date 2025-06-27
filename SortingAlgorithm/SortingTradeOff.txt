@@ -28,14 +28,14 @@ The best sorting algorithm to use depends on what you're sorting and your requir
 
                               📊 Time Complexity Comparison
 
-Algorithm	            Best	       Average	            Worst	      Space	      Stable
-Quick Sort	          O(n log n)      O(n log n)	        O(n²)	     O(log n)	   ❌ No
-Merge Sort	          O(n log n)	  O(n log n)	      O(n log n)	   O(n)	       ✅ Yes
-Heap Sort	          O(n log n)	  O(n log n)	      O(n log n)	   O(1)	       ❌ No
-Insertion Sort	        O(n)	        O(n²)	             O(n²)	       O(1)  	   ✅ Yes
-Counting Sort	      O(n + k)	       O(n + k)             O(n + k)	   O(k)	       ✅ Yes
-Radix Sort	            O(nk)	        O(nk)	             O(nk)	      O(n + k)	   ✅ Yes
-Timsort	                O(n)	      O(n log n)	       O(n log n)	    O(n)	   ✅ Yes
+Algorithm	            Best	       Average	            Worst	       Space	      Stable
+Quick Sort	          O(n log n)     O(n log n)	         O(n²)	      O(log n)	      ❌ No
+Merge Sort	          O(n log n)	    O(n log n)	        O(n log n)	  O(n)	      ✅ Yes
+Heap Sort	          O(n log n)	    O(n log n)	        O(n log n)	  O(1)	      ❌ No
+Insertion Sort	        O(n)	        O(n²)	             O(n²)	     O(1)  	      ✅ Yes
+Counting Sort	      O(n + k)	       O(n + k)             O(n + k)	  O(k)	      ✅ Yes
+Radix Sort	            O(nk)	        O(nk)	             O(nk)	    O(n + k)	   ✅ Yes
+Timsort	                O(n)	      O(n log n)	        O(n log n)	  O(n)	      ✅ Yes
 
 
 
