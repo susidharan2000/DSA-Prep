@@ -1,0 +1,43 @@
+Recursion & Backtracking Patterns
+----------------------------------
+1. Permutation
+   Description:
+     - You're arranging all elements in all possible orders
+   Common Problems:
+     - Permutations of an array or string (e.g., [1,2,3])
+     - Letter Tile Possibilities
+     - Next Permutation
+
+2. Combination
+   Description:
+     - You're picking some elements in some order (usually order doesn't matter)
+   Common Problems:
+     - Combination Sum (I, II)
+     - Combinations (pick k from n)
+     - Phone Number Letter Combinations
+
+3. Subset
+   Description:
+     - You're deciding for each element: include or exclude
+   Common Problems:
+     - Subsets (Power Set)
+     - Subsets with Duplicates
+     - Partition Equal Subset Sum
+
+4. Path/Grid
+   Description:
+     - You're moving from a starting point to an end point (e.g., grid, maze)
+   Common Problems:
+     - Unique Paths (with or without obstacles)
+     - Rat in a Maze
+     - Word Search
+     - Flood Fill / Island Count
+
+5. Constraint-Based
+   Description:
+     - You can only pick/add something if it meets specific rules or limits
+   Common Problems:
+     - Valid Parentheses (only add ')' if open > close)
+     - Restore IP Addresses (each part must be ≤255, no leading zero)
+     - N-Queens Problem (no attacking queens)
+     - Sudoku Solver (row/col/box constraints)
