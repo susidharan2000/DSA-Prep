@@ -1,3 +1,84 @@
+Math Patterns
+-------------
+
+1. Basic Number Theory
+   Description:
+     - Work with primes, GCD, LCM, factors, divisibility, etc.
+   Must-Solve Problems:
+     - Count Primes (Leetcode 204)
+     - Sieve of Eratosthenes (Classic Implementation)
+     - Greatest Common Divisor of Strings (Leetcode 1071)
+     - Euclidean Algorithm (GCD of two numbers)
+     - LCM of two numbers
+
+2. Modular Arithmetic
+   Description:
+     - Use modulo to prevent overflow or apply cyclic behavior.
+     - Often used in hashing, combinatorics, or large number operations.
+   Must-Solve Problems:
+     - Pow(x, n) (Leetcode 50)
+     - Modular Exponentiation (Fast Power)
+     - Fermat’s Little Theorem based Inverse
+     - Subarray Sums Divisible by K (Leetcode 974)
+
+3. Combinatorics
+   Description:
+     - Use permutations, combinations, factorials, Pascal’s triangle, etc.
+   Must-Solve Problems:
+     - Pascal's Triangle (Leetcode 118)
+     - Combinations (Leetcode 77)
+     - Unique Paths (Leetcode 62)
+     - Combination Sum (Leetcode 39)
+     - Number of Digit One (Leetcode 233 - Hard)
+
+4. Bit Manipulation
+   Description:
+     - Use binary representation, bit masking, XOR tricks.
+   Must-Solve Problems:
+     - Single Number (Leetcode 136)
+     - Number of 1 Bits (Leetcode 191)
+     - Counting Bits (Leetcode 338)
+     - Subsets using Bits (Leetcode 78 via bitmask)
+     - Bitwise AND of Numbers Range (Leetcode 201)
+
+5. Geometry & Coordinate Math
+   Description:
+     - Work with 2D/3D points, distance, slope, angles.
+   Must-Solve Problems:
+     - Valid Triangle Number (Leetcode 611)
+     - Max Points on a Line (Leetcode 149 - Hard)
+     - Number of Boomerangs (Leetcode 447)
+     - Minimum Area Rectangle (Leetcode 939)
+
+6. Math Logic & Equations
+   Description:
+     - Solve using formulas, algebraic transformations, pattern finding.
+   Must-Solve Problems:
+     - Excel Sheet Column Title (Leetcode 168)
+     - Missing Number (Leetcode 268)
+     - Sum of Two Integers (Leetcode 371 - Without + or -)
+     - Add Digits (Leetcode 258) - Digital Root
+     - Happy Number (Leetcode 202)
+
+7. Base Conversions
+   Description:
+     - Convert numbers between different bases.
+   Must-Solve Problems:
+     - Convert to Base -2 (Leetcode 1017)
+     - Excel Column Number to Title (Leetcode 171)
+     - Base 7, Base 10 Conversion Problems
+     - Multiply Strings (Leetcode 43)
+
+8. Probability & Expected Value (Advanced)
+   Description:
+     - Calculate probabilities and expected outcomes.
+   Must-Solve Problems:
+     - New 21 Game (Leetcode 837 - Hard)
+     - Random Pick with Weight (Leetcode 528)
+     - Random Point in Circle (Leetcode 478)
+
+
+
 Recursion & Backtracking Patterns
 ----------------------------------
 1. Permutation
@@ -41,3 +122,156 @@ Recursion & Backtracking Patterns
      - Restore IP Addresses (each part must be ≤255, no leading zero)
      - N-Queens Problem (no attacking queens)
      - Sudoku Solver (row/col/box constraints)
+
+
+----------------------------------------------------------------------------------------
+Tree Patterns
+-------------
+
+1. Traversal (DFS / BFS)
+   Description:
+     - Visit all nodes in preorder, inorder, postorder (DFS) or level-order (BFS).
+   Must-Solve Problems:
+     - Binary Tree Inorder Traversal (Leetcode 94)
+     - Binary Tree Preorder Traversal (Leetcode 144)
+     - Binary Tree Postorder Traversal (Leetcode 145)
+     - Binary Tree Level Order Traversal (Leetcode 102)
+     - Zigzag Level Order Traversal (Leetcode 103)
+
+2. Divide and Conquer (Recursive Subtree Computation)
+   Description:
+     - Solve left and right subtrees recursively, combine results for the current node.
+   Must-Solve Problems:
+     - Diameter of Binary Tree (Leetcode 543)
+     - Maximum Depth of Binary Tree (Leetcode 104)
+     - Balanced Binary Tree (Leetcode 110)
+     - Lowest Common Ancestor of Binary Tree (Leetcode 236)
+     - Count Good Nodes in Binary Tree (Leetcode 1448)
+
+3. Construct Tree
+   Description:
+     - Build a binary tree from traversal arrays or node relationships.
+   Must-Solve Problems:
+     - Construct Binary Tree from Preorder and Inorder Traversal (Leetcode 105)
+     - Construct Binary Tree from Inorder and Postorder (Leetcode 106)
+     - Construct Binary Tree from Preorder and Postorder (Leetcode 889)
+     - Serialize and Deserialize Binary Tree (Leetcode 297)
+
+4. Path-Based Problems
+   Description:
+     - Track or compute paths, usually top-down or bottom-up.
+   Must-Solve Problems:
+     - Path Sum (Leetcode 112)
+     - Path Sum II (Leetcode 113)
+     - Binary Tree Paths (Leetcode 257)
+     - Sum Root to Leaf Numbers (Leetcode 129)
+     - Maximum Path Sum (Leetcode 124)
+
+5. Tree to Tree Transformation
+   Description:
+     - Modify the tree structure while keeping traversal logic intact.
+   Must-Solve Problems:
+     - Invert Binary Tree (Leetcode 226)
+     - Flatten Binary Tree to Linked List (Leetcode 114)
+     - Merge Two Binary Trees (Leetcode 617)
+     - Subtree of Another Tree (Leetcode 572)
+
+6. Binary Search Tree (BST) Properties
+   Description:
+     - Use BST property: left < root < right to optimize traversal and search.
+   Must-Solve Problems:
+     - Validate Binary Search Tree (Leetcode 98)
+     - Lowest Common Ancestor in BST (Leetcode 235)
+     - Kth Smallest Element in BST (Leetcode 230)
+     - Convert BST to Greater Tree (Leetcode 538)
+     - Two Sum IV - Input is a BST (Leetcode 653)
+
+7. Ancestor / Backtracking
+   Description:
+     - Use recursion to backtrack and track ancestors, paths, or return conditions.
+   Must-Solve Problems:
+     - Lowest Common Ancestor of Binary Tree (Leetcode 236)
+     - All Nodes Distance K in Binary Tree (Leetcode 863)
+     - Binary Tree Cameras (Leetcode 968)
+     - Time Needed to Inform All Employees (Leetcode 1376)
+
+8. Serialization / Deserialization
+   Description:
+     - Encode a tree into a string and decode it back. Usually BFS or DFS.
+   Must-Solve Problems:
+     - Serialize and Deserialize Binary Tree (Leetcode 297)
+     - Serialize and Deserialize BST (Leetcode 449)
+
+
+----------------------------------------------------------------------------------------
+Graph Patterns
+--------------
+
+1. Traversal (BFS/DFS)
+   Description:
+     - Visit all nodes and their neighbors either in depth or breadth order.
+     - Used to explore all reachable nodes or process each connected component.
+   Must-Solve Problems:
+     - Clone Graph (Leetcode 133)
+     - Number of Connected Components in an Undirected Graph (Leetcode 323)
+     - Graph Valid Tree (Leetcode 261)
+     - Flood Fill (Leetcode 733)
+     - Word Ladder (Leetcode 127) — BFS Shortest Path
+
+2. Topological Sort (DAG)
+   Description:
+     - Linear ordering of nodes where every directed edge u → v implies u comes before v.
+     - Only for Directed Acyclic Graphs.
+   Must-Solve Problems:
+     - Course Schedule (Leetcode 207)
+     - Course Schedule II (Leetcode 210)
+     - Alien Dictionary (Leetcode 269 - Hard)
+     - Parallel Courses (Leetcode 1136)
+
+3. Shortest Path
+   Description:
+     - Find the path with minimum weight/cost/distance.
+     - BFS for unweighted, Dijkstra for weighted positive edges, Bellman-Ford for negatives.
+   Must-Solve Problems:
+     - Network Delay Time (Leetcode 743)
+     - Cheapest Flights Within K Stops (Leetcode 787)
+     - Path with Minimum Effort (Leetcode 1631)
+     - Maze with Shortest Distance (Leetcode 505)
+
+4. Union-Find / Disjoint Set
+   Description:
+     - Group elements or detect cycles efficiently using union-find.
+     - Good for dynamic connectivity and Kruskal's algorithm.
+   Must-Solve Problems:
+     - Redundant Connection (Leetcode 684)
+     - Number of Islands II (Leetcode 305 - Hard)
+     - Accounts Merge (Leetcode 721)
+     - Satisfiability of Equality Equations (Leetcode 990)
+     - Most Stones Removed with Same Row or Column (Leetcode 947)
+
+5. Backtracking on Graph
+   Description:
+     - Explore all paths or sequences by trying possibilities and backtracking on invalid paths.
+   Must-Solve Problems:
+     - All Paths From Source to Target (Leetcode 797)
+     - Word Search (Leetcode 79)
+     - Word Search II (Leetcode 212)
+     - Solve Maze (custom backtracking problem or coding challenge)
+
+6. Cycle Detection
+   Description:
+     - Detect if a loop exists in the graph (differs for directed vs. undirected).
+   Must-Solve Problems:
+     - Detect Cycle in Directed Graph (Leetcode 207 or custom DFS)
+     - Detect Cycle in Undirected Graph (Leetcode 261)
+     - Redundant Connection (Leetcode 684)
+
+7. Connected Components
+   Description:
+     - Count or identify all disconnected parts of a graph.
+   Must-Solve Problems:
+     - Number of Connected Components (Leetcode 323)
+     - Number of Provinces / Friend Circles (Leetcode 547)
+     - Number of Islands (Leetcode 200)
+     - Count Sub Islands (Leetcode 1905)
+
