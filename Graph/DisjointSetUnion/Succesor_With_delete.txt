@@ -1,0 +1,65 @@
+Question 3: Successor with Delete
+
+Given a set of n integers  
+S = {0, 1, 2, ..., n - 1}  
+and a sequence of requests of the following form:
+
+1. Remove x from S  
+2. Find the successor of x: the smallest y in S such that y ≥ x
+
+Design a data type that supports all operations (except construction) in logarithmic time or better in the worst case.
+
+
+
+solution()
+
+java:
+class solution{
+  static class DisjointSet {
+    List<Integer>parent;
+    List<Integer>rank;
+    DisjointSet(int n){
+        parent = new ArrayList<>();
+        rank = new ArrayList<>();
+        for(int i = 0;i<n;i++){
+            parent.add(i);
+            rank.add(1);
+        }
+    }
+    //find
+    public int find(int u){
+        if(u != parent.get(u)){
+            int root = find(parent.get(u));
+            parent.set(u,root);
+            return root;
+        }
+        return parent.get(u);
+    }
+    //union
+    public void union(int u,int v){
+        int pu = find(u);
+        int pv = find(v);
+        if(pu == pv)return false;
+        parent.set(pu,pv);
+    }
+    //Remove
+    public void remove(int u){
+        if(u < parent.size()-1){
+        union(u,u+1);
+        }
+    }
+    // successor
+    public int successor(int u){
+        int res = find(u);
+        if(res >= parent.size()){
+            return -1;
+        }
+        return res;
+  }
+  }
+  public static void main(String [] args){
+    int n = 10;
+    DisjointSet ds = new DisjointSet(n);
+    remove(2);
+  }
+  }

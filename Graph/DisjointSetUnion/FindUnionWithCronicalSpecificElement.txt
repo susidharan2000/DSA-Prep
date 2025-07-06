@@ -1,0 +1,92 @@
+Question 2: Union-Find with Specific Canonical Element
+
+Task:
+Enhance the Union-Find (Disjoint Set Union) data structure to support a new operation:
+
+int find(int i)
+
+This find(i) should return the largest element in the connected component containing i.
+
+Requirements:
+You must support the following operations, each in logarithmic time or better:
+
+- union(p, q)
+- connected(p, q)
+- find(i)
+
+Example:
+If a connected component contains: {1, 2, 6, 9}
+
+Then:
+find(1) == 9
+find(2) == 9
+find(6) == 9
+find(9) == 9
+
+
+Solution:
+
+so first il will be creating the disjoint class
+public class solution{
+    static class DisjointSet{
+        List<Integer>parent;
+        List<Integer>rank;
+        List<Integer>maxele;
+
+        DisjointSet(int n){
+            maxele = new ArrayList<>();
+            parent = new ArrayList<>();
+            rank = new ArrayList<>();
+            for(int i = 0;i< n;i++){
+                parent.add(i);
+                rank.add(1);
+                maxele.add(i);
+            }
+        }
+        //union
+        public void union(int u,int v){
+            int pu = findUnion(u);
+            int pv = findUnion(v);
+            if(pv == uv)return;
+            if(rank.get(pu) < rank.get(pv)){
+                parent.set(pu,pv);
+                maxele.set(pv,math.max(maxele.get(pu),maxele.get(pv))); //getting maximum element in component
+            }else if(rank.get(pu) > rank.get(pv)){
+                parent.set(pv,pu);
+                maxele.set(pu,math.max(maxele.get(pu),maxele.get(pv)));
+            }else{
+                parent.set(pv,pu);
+                rank.set(pu,rank.get(pu)+1);
+                maxele.set(pu,math.max(maxele.get(pu),maxele.get(pv)));
+            }
+        }
+        //find 
+        public int findUnion(int u){
+            if(u != parent.get(u)){
+                int root = findUnion(parent.get(i)); //fnd the ultimate parent
+                parent.set(u,root); //path compression
+                return root; // return ultimate parent
+            }
+            return parent.get(u);
+        }
+        //isConnected
+        public boolean idConnected(int u,int v){
+            if(findUnion(u) == findUnion(v))return true;
+            return false;
+        }
+        //find --- as requestion in Question
+        public int find(int u){
+            return maxele;
+        }
+    }
+    public static void main(Stirng [] args){
+        DisjointSet ds = new DisjointSet(10);
+        union(1,2);
+        union(6,9);
+        union(2,6);
+        System.out.print(find(1));
+        System.out.print(find(2));
+        System.out.print(find(6));
+        System.out.print(find(9));
+    }
+}

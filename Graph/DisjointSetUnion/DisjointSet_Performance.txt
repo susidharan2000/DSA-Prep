@@ -1,0 +1,42 @@
+Union-Find Performance: Interview Notes
+---------------------------------------
+
+✅ What is Union-Find?
+- A data structure to track disjoint (non-overlapping) sets.
+- Commonly used in Kruskal’s MST algorithm, dynamic connectivity problems, etc.
+
+🚫 Naive Implementations
+
+1. Quick-Find
+- Stores component IDs in an array.
+- find(p): O(1)
+- union(p, q): O(n) — must scan and update the entire array.
+
+2. Quick-Union
+- Represents sets as trees (each node points to its parent).
+- find(p): O(tree height)
+- union(p, q): O(n) worst case (trees can become very tall)
+
+⚠️ Problem at Scale: 10⁹ Operations
+
+- n = 1,000,000,000 (1 billion)
+- Each union() could take O(n) = 10⁹ steps
+- Total steps = 10⁹ × 10⁹ = 10¹⁸ steps
+- On a CPU doing 10⁹ steps/sec:
+  → 10¹⁸ ÷ 10⁹ = 10⁹ seconds ≈ 31.7 years
+
+❗Conclusion:
+- Naive approaches are impractical for large datasets — could take decades to compute.
+
+✅ Optimized Union-Find
+
+Union by Rank or Size + Path Compression
+- Keeps trees balanced and flattens them during find.
+- Time per operation: O(α(n)), where α(n) is the inverse Ackermann function.
+- In practice, α(n) ≤ 5 — so operations are nearly constant time.
+
+➡️ So, 10⁹ operations × ≤ 5 steps = ≤ 5 × 10⁹ steps
+➡️ Just a few seconds to minutes on a modern CPU
+
+🧠 Final One-Liner Summary for Interviews:
+Naive Union-Find can take up to 30 years for 10⁹ operations. With union by rank and path compression, it runs in seconds — thanks to nearly constant-time operations (O(α(n))).

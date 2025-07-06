@@ -1,0 +1,99 @@
+Social Network Connectivity
+Given a social network containing n members and a log file containing m timestamps at which times pairs of members formed friendships, design an algorithm to determine the earliest time at which all members are connected (i.e., every member is a friend of a friend of a friend ... of a friend).
+
+Assume:
+
+The log file is sorted by timestamp.
+Friendship is an equivalence relation (reflexive, symmetric, transitive).
+Requirements:
+
+Running time must be O(m log n) or better.
+Use extra space proportional to n.
+
+
+
+
+solution:
+ let me imagine that the 
+ input for this problem is 
+ log = [
+    ["timestamp",susi(0),rahul(1)],
+    ["timestamp",raj(2),jerom(3)],
+    ["timestamp",keerthana(4),madesh(5)],
+    ["timestamp",gobesh(6),jerom(3)],
+    ["timestamp",keerthana(4),rahul(1)]
+    ];
+n = 7;
+so let me take this input as 
+log = [
+    [1,0,1],
+    [2,2,3],
+    [3,4,5],
+    [4,6,3],
+    [5,4,1]
+];
+
+// first i will be create a Disjoint set union by rank
+
+java:
+class solution{
+  static class DisjointSet {
+    List<Integer>parent;
+    List<Integer>rank;
+    DisjointSet(int n){
+        parent = new ArrayList<>();
+        rank = new ArrayList<>();
+        for(int i = 0;i<n;i++){
+            parent.add(i);
+            rank.add(1);
+        }
+    }
+    //find
+    public int find(int u){
+        if(u != parent.get(u)){
+            int root = find(parent.get(u));
+            parent.set(u,root);
+            return root;
+        }
+        return parent.get(u);
+    }
+    //union
+    public boolean union(int u,int v){
+        int pu = find(u);
+        int pv = find(v);
+        if(pu == pv)return false;
+        if(rank.get(pu) < rank.get(pv)){
+            parent.set(pu,pv);
+        }else if(rank.get(pu) > rank.get(pv)){
+            parent.set(pv,pu);
+        }
+        else{
+            parent.set(pv,pu);
+            rank.set(pu,rank.get(pu)+1);
+        }
+        reutrn true;
+    }
+  }
+  public static void main(String [] args){
+    int [][]log = {
+    {1,0,1},
+    {2,2,3},
+    {3,4,5},
+    {4,6,3},
+    {5,4,1}
+    };
+    int n = 7 // total number of users
+    DisjointSet ds = new DisjointSet (n);
+    int components = n; // to track the total number of components
+    for(int i = 0;i<log.length();i++){
+        int time = log[i][0];
+        int user1 = log[i][1];
+        int user2 = log[i][2];
+        if(union(user1,user2))components--;
+        if(components == 1){ // if total components is 1 means totally one group (all users are connected) so then i will be returning the time 
+            System.out.print(time);
+            break;
+        }
+    System.out.print(-1); // if not fully connected
+  }
+  }
