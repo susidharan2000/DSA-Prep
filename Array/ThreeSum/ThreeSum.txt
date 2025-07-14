@@ -1,0 +1,54 @@
+3-SUM in quadratic time. Design an algorithm for the 3-SUM problem that takes time proportional to n^2 in the worst case. 
+You may assume that you can sort the n integers in time proportional to n^2 or better.
+
+
+
+solution:
+Brute Force algorithm
+
+public static List<List<Integer>> bruteThreeSum(){
+int [] arr = {-1,0,1,2,-1,-4};
+List<List<Integer>> res = new ArrayList<>();
+int n = arr.length;
+for(int i = 0;i<n;i++){
+    for(int j = i+1;j<n;j++){
+        for(int k = j+1;k<n;k++){
+            if(arr[i]+arr[j]+arr[k] == 0){
+                res.add(new ArrayList<>(Arrays.asList(arr[i],arr[j],arr[k])));
+            }
+        }
+    }
+}
+}
+
+the time complixity will be O(n^3) which is cubic time complixity
+the space complixity is O(1) Note: since the (List<List<Integer>> res)is unsed to return the result not for processing.
+
+
+next we will be jumping to optimal approch
+int [] arr = {-1,0,1,2,-1,-4};
+public static List<List<Integer>> OptimalThreeSum(int []arr){
+Arrays.sort(arr);
+int n = arr.length;
+List<List<Integer>> res = new ArrayList<>();
+for(int i=0;i<n;i++){
+    if(i > 0 && arr[i] == arr[i-1])continue;
+        int left = i+1;
+        int right = n-1;
+        while(left < right){
+            int sum = arr[i]+arr[left]+arr[right];
+            if(sum == 0){
+                while(left < right && arr[left] == arr[left-1])left++;
+                while(left < right && arr[right] == arr[right+1])right--;
+                res.add(new ArrayList<>(Arrays.asList(arr[i],arr[left],arr[right])));
+                left++;
+                right--;
+            }else if(sum < 0){
+                left++;
+            }else{
+                right--;
+            }
+    }
+}
+return res;
+}

@@ -1,0 +1,66 @@
+Question 2: Search in a Bitonic Array
+
+A bitonic array is an array of n distinct integer values that first strictly increases and then strictly decreases.
+Write a program that, given a bitonic array of size n and a target integer, determines whether the target exists in the array.
+
+Standard Version:
+Use approximately ~3 * log n comparisons in the worst case.
+
+Signing Bonus:
+Optimize the solution to use approximately ~2 * log n comparisons in the worst case.
+Also, prove that no algorithm can guarantee fewer than ~2 * log n comparisons in the worst case.
+
+
+Solution:
+
+int [] arr = {2, 5, 9, 12, 14, 13, 10, 6, 3};
+int target = 6;
+public static int find(int [] arr,int target){
+    //find the peek element
+    int low = 0;
+    int high = arr.length-1;
+    int peekElement = 0;
+    while(low < high){
+        int mid = (low+high)/2;
+        if( arr[mid] < arr[mid+1]){
+            low = mid+1;
+        }else{
+            high = mid;
+        }
+    }
+     peekElement  = low;
+    if(arr[peekElement] == target)return peekElement; 
+    // search on left half 
+    int left = return AcendingOderSearch(0,peekElement-1,arr,target);
+    if(left != -1)return left;
+    // seaarch on right half
+    return decendingOrderSearch(peekElement+1,arr,target);
+
+}
+public static int AcendingOderSearch(int low,int high,int [] arr,int target){
+    while(low <= high){
+        int mid = (low+high)/2;
+        if(arr[mid] == target){
+            return mid;
+        }else if(arr[mid] < target){
+            low = mid+1;
+        }else{
+            high = mid-1;
+        }
+    }
+    return -1;
+}
+
+public static int decendingOrderSearch(int low,int high,int [] arr,int target){
+    while(low <= high){
+        int mid = (low+high)/2;
+        if(arr[mid] == target){
+            return mid;
+        }else if(arr[mid] > target){
+            low = mid+1;
+        }else{
+            high = mid-1;
+        }
+    }
+    return -1;
+}
