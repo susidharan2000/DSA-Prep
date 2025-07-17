@@ -1,3 +1,5 @@
+// boyer-moore majority voting algorithm
+import java.util.*;
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
         int major1 = 0;

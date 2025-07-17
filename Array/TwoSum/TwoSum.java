@@ -1,3 +1,5 @@
+import java.util.*;
+
 //better solution
 class Solution {
     public int[] twoSum(int[] nums, int target) {

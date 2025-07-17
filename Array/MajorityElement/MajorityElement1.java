@@ -1,3 +1,4 @@
+//boyer-moore majority voting algorithm
 class Solution {
     public int majorityElement(int[] nums) {
         int ele = nums[0];

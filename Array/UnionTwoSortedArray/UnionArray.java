@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 // a,b : the arrays
 class Solution {
     // Function to return a list containing the union of the two arrays.
