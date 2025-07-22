@@ -2,65 +2,93 @@
 import java.util.*;
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
-        int major1 = 0;
-        int major2 = 0;
+        int m1 = 0;
+        int m2 = 0;
+        int c1 = 0;
+        int c2 = 0;
+        int n = nums.length;
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0;i< n;i++){
+            if(m1 == nums[i]){
+                c1++;
+            }else if(m2 == nums[i]){
+                c2++;
+            }else if(c1 == 0){
+                m1 = nums[i];
+                c1 =1;
+            }else if(c2 == 0){
+                m2 = nums[i];
+                c2 = 1;
+            }
+            else{
+                c1--;
+                c2--;
+            }
+        }
         int count1 = 0;
         int count2 = 0;
-        for(int i = 0;i<nums.length;i++){
-            if(nums[i] == major1){
+        for(int i = 0;i< n;i++){
+            if(nums[i] == m1){
                 count1++;
-            }else if(nums[i] == major2){
+            }else if(nums[i] == m2){
                 count2++;
             }
-            else if(count1 == 0){
-                major1 = nums[i];
-                count1++;
-            }else if(count2 == 0){
-                major2 = nums[i];
-                count2++;
-            }else{
-                count1--;
-                count2--;
-            }
         }
-        int m1count = 0;
-        int m2count = 0;
-        for(int i =0;i<nums.length;i++){
-            if(nums[i] == major1)m1count++;
-            if(nums[i] == major2)m2count++;
+        if(count1 > n/3){
+            list.add(m1);
         }
-        List<Integer> list = new ArrayList<>();
-        if(m1count > nums.length/3){
-            list.add(major1);
-        }
-        if(major1 != major2  && m2count > nums.length/3){
-            list.add(major2);
+        if(count2 > n/3){
+            list.add(m2);
         }
         return list;
     }
 }
 
-// n = 10 3.333 
-//                    i
-// [5,5,5,5,7,7,7,2,7,2]
+// n = 10
+//           i
+//[3,4,3,2,4,3,3,4,4,2]
 
-// m1 = 5
-// c1 = 2
+// m1 = 3;  c1 = 2
+// m2 = 4;  c2 = 2
 
-// m2 = 7
-// c2 = 2
-
-// //do another traversal
-// m1count  = 4
-// m2count = 4
-// if(m1count > n/3){
+// if(m1 == nums[i]){
+//     c1++;
+//}
+// else if(m2 == nums[i]){
+//     c2++;
+// }
+// }else if(c1 == 0){
+//     m1 = nums[i];
+// }
+//else if(c2 == 0){
+//     m2 = nums[i];
+// }else{
+//     c1--;
+//     c2--;
+// }
+//.                  i
+//[3,4,3,2,4,3,3,4,4,2]
+// m1 = 3 = count1 = 4
+// m2 = 4 = cout2 = 4
+// if(count1 > n/3){
 //     list.add(m1);
 // }
-// if(m2count > n/3){
+// if(count2 > n/3){
 //     list.add(m2);
-// }
+// } return list;
 
+//tc : O(n)+O(n)= O(2n)
+//sc : O(1)
 
+//************   Oder matters */
+// Phase 1: Candidate Selection (Voting Phase)
 
+// We maintain two variables to store potential majority candidates (m1 and m2), and two counters (c1 and c2) for their respective frequencies.
 
+// For each number in the array:
 
+// If the number matches the first candidate (m1), increment c1.
+// Else if the number matches the second candidate (m2), increment c2.
+// Else if c1 is 0, assign the number to m1 and set c1 = 1.
+// Else if c2 is 0, assign the number to m2 and set c2 = 1.
+// Else, decrement both c1 and c2.
