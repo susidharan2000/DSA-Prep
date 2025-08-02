@@ -1,0 +1,91 @@
+🗓️ 10-Week Study Plan (Beginner Friendly)
+
+Daily Schedule:
+- DSA: 2 hours/day (continue your current progress)
+- Computer Fundamentals: 2 hours/day (follow the plan below)
+
+--------------------------------------------------
+✅ Week 1–2: Operating System (OS)
+--------------------------------------------------
+🧠 Topics:
+- Processes, Threads, PCB
+- CPU Scheduling (FCFS, RR, SJF, Priority)
+- Memory Management (Paging, Segmentation, Virtual Memory)
+- Deadlocks (Prevention, Avoidance, Banker’s Algorithm)
+- File Systems
+- Synchronization (Mutex, Semaphore)
+
+📌 Daily Plan:
+- Watch 1–2 videos/day (Gate Smashers or Neso Academy)
+- Take handwritten or Notion notes
+- End of each week: revise + solve 5–10 MCQs or simple OS interview Qs
+
+--------------------------------------------------
+✅ Week 3–4: Database Management Systems (DBMS)
+--------------------------------------------------
+🧠 Topics:
+- ER Model, Keys (Primary, Foreign, Candidate)
+- Normalization (1NF to 3NF, BCNF)
+- SQL: Joins, Group By, Subqueries
+- Indexing, Views, Transactions, ACID
+- Concurrency Control (Locking, Deadlocks)
+
+📌 Daily Plan:
+- Alternate days: 1 theory + 1 practice day (use LeetCode SQL or HackerRank SQL)
+- Note most-used SQL queries and real-world use cases
+
+--------------------------------------------------
+✅ Week 5: Computer Networks
+--------------------------------------------------
+🧠 Topics:
+- OSI vs TCP/IP Model
+- HTTP/HTTPS, DNS, IP Addressing
+- TCP vs UDP
+- Routing Basics
+- CDNs, Firewalls, Proxies
+
+📌 Daily Plan:
+- 1 layer/day (7 layers = 7 days)
+- Understand how a browser loads a website (great interview Q)
+- Use visuals from Neso Academy or Computerphile (YouTube)
+
+--------------------------------------------------
+✅ Week 6: OOP Concepts + SOLID Principles
+--------------------------------------------------
+🧠 Topics:
+- Classes, Objects, Inheritance, Polymorphism, Encapsulation, Abstraction
+- SOLID Principles (1/day)
+- Interface vs Abstract Class
+- OOP in your preferred language (Java/JS/Python)
+
+📌 Daily Plan:
+- Write code examples for each concept
+- Learn to explain them with real-world analogies (used in interviews)
+
+--------------------------------------------------
+✅ Week 7–8: Low-Level Design (LLD)
+--------------------------------------------------
+🧠 Topics:
+- Design Patterns: Singleton, Factory, Strategy, Observer
+- Class Diagrams, UML basics
+- Practice 2–3 LLD problems (e.g., BookMyShow, Parking Lot)
+
+📌 Daily Plan:
+- 1 day theory + 1 day code implementation
+- Week 8: Try solving 1 full LLD problem
+
+--------------------------------------------------
+✅ Week 9–10: Basic System Design (HLD)
+--------------------------------------------------
+🧠 Topics:
+- Scalability Concepts (Latency, Throughput, Load Balancer)
+- Caching (Redis), Database Sharding, Replication
+- REST vs RPC, Queues (Kafka/RabbitMQ basic idea)
+
+Practice 1–2 HLD problems:
+- Design URL Shortener
+- Design Instagram Feed
+
+📌 Daily Plan:
+- Watch a Gaurav Sen or System Design Primer video
+- Try to explain the system on paper or whiteboard (improves thinking)
