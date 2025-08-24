@@ -1,0 +1,66 @@
+📅 One-Month Weekday DSA Plan (80 hrs, 20 days)
+
+-------------------------------------------------
+Week 1 – Foundations
+-------------------------------------------------
+Day 1–2: Arrays & Strings (2 days)
+  - Old Problems: Reverse array, Rotate array, Two-pointer basics.
+  - New Problems: Subarray sum, Sliding window (max/min), Longest substring without repeating, Hashing problems.
+
+Day 3–4: Linked List (2 days)
+  - Concepts: SLL, DLL, Cycle detection, Reverse in k-group, Merge sort on LL.
+  - Problems: Reverse LL, Detect cycle, Palindrome LL, Intersection, Merge two lists.
+
+Day 5: Stack & Queue (1 day)
+  - Stack Problems: Next Greater Element (I & II), Valid Parentheses, Min Stack, Largest Rectangle in Histogram.
+  - Queue Problems: Sliding Window Maximum (Deque), LRU Cache (Design).
+
+-------------------------------------------------
+Week 2 – Trees & Recursion
+-------------------------------------------------
+Day 6–7: Binary Tree (2 days)
+  - Problems: Traversals (inorder, preorder, postorder, level order),
+    Diameter of tree, Height, Lowest Common Ancestor, Path Sum.
+
+Day 8–9: BST + Heap (2 days)
+  - BST: Insert, Search, Delete, Validate BST, Kth Smallest Element.
+  - Heap: Heapify, Heap sort, Top-K frequent, Kth largest element.
+
+Day 10: Recursion + Backtracking (1 day)
+  - Problems: Subsets, Permutations, N-Queens, Sudoku Solver, Rat in a Maze.
+
+-------------------------------------------------
+Week 3 – Graphs & DP Basics
+-------------------------------------------------
+Day 11–12: Graphs (2 days)
+  - Problems: BFS, DFS, Connected components, Detect cycle (directed & undirected), Topological sort, Shortest path (Dijkstra, Bellman-Ford).
+
+Day 13–14: DP Basics (2 days)
+  - Problems: Fibonacci, Climbing Stairs, 0/1 Knapsack, Subset Sum, Longest Increasing Subsequence, Minimum Path Sum.
+
+Day 15: DP on Strings (1 day)
+  - Problems: Longest Common Subsequence, Edit Distance, Longest Palindromic Subsequence, Palindrome Partitioning.
+
+-------------------------------------------------
+Week 4 – Advanced & Mocking
+-------------------------------------------------
+Day 16–17: Advanced DP (2 days)
+  - Problems: DP on grids, House Robber, Coin Change, DP with states, Stock Buy & Sell variations.
+
+Day 18: Tries & Bit Manipulation (1 day)
+  - Tries: Implement Trie, Word Search II.
+  - Bit Manipulation: Single Number, Count set bits, Maximum XOR Pair.
+
+Day 19: Mixed Practice (1 day)
+  - Problems: Pick 4–5 across random topics (simulate mixed interview set).
+
+Day 20: Full Mock Day (1 day)
+  - Timed practice: Solve 2 medium + 1 hard in 90 min.
+  - Review + Take notes on weak areas.
+
+-------------------------------------------------
+⚖️ Daily Flow (4 hrs)
+-------------------------------------------------
+- 30–45 min: 1–2 old problems (revision).
+- 2.5–3 hrs: 3–4 new problems (focus).
+- 30 min: Debug mistakes + Write short notes.
