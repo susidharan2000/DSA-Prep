@@ -1,0 +1,22 @@
+package BinarySearch.SingleElementInSortedArray;
+
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        int n = nums.length;
+        int low = 1;
+        int high = n-2;
+        if(n == 1)return nums[0];
+        if(nums[0] != nums[1])return nums[0];
+        if(nums[n-1]!= nums[n-2])return nums[n-1]; 
+        while(low <= high){
+            int mid = low+(high-low)/2;
+            if(nums[mid] != nums[mid-1] && nums[mid] != nums[mid+1])return nums[mid];//checking the mid is single element or not
+            if(mid % 2 == 0 && nums[mid] == nums[mid+1] || mid % 2 == 1 && nums[mid] == nums[mid-1]){// if the odd even sequancedid not get interupted(meand the single number in not going to be there) so search on the other side 
+                low = mid+1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
