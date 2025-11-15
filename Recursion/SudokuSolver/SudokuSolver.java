@@ -1,3 +1,4 @@
+
 class Solution {
     public static boolean isValid(char[][]board,char ch,int row,int col){
         for(int i = 0;i<9;i++){

@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     public int distinctPrimeFactors(int[] nums) {
         Set<Integer> set = new HashSet<>();

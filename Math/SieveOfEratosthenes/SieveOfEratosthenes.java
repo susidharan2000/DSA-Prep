@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int[] sieve(int n) {
         int [] prime = new int [n+1];

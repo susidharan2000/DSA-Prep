@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     //get factorial
     public static int getfact(int num){

@@ -1,5 +1,5 @@
 // User function Template for Java
-
+import java.util.*;
 //optimal approch
 class Solution {
     // Function to return a list containing the intersection of two arrays.
@@ -34,7 +34,7 @@ class Solution {
 
 
  //brute force approch
-class Solution {
+class Solution2 {
     // Function to return a list containing the intersection of two arrays.
     static ArrayList<Integer> intersection(int arr1[], int arr2[]) {
         int [] visited = new int [arr2.length];
